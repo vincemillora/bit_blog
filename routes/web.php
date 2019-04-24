@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('users', 'UsersController');
+Route::resource('blog_posts', 'BlogPostsController');
+Route::resource('likes', 'LikesController');
+Route::resource('comments', 'CommentsController');
+Route::resource('admins', 'AdminsController');
