@@ -16,7 +16,7 @@ class CreateBlogPostsTable extends Migration
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->increments('post_id');
             $table->string('post_title', 100);
-            $table->string('post_message', 500);
+            $table->longtext('post_message');
             $table->string('user_email', 50);
             $table->timestamp('date_created');
             $table->timestamp('date_updated');
