@@ -41,12 +41,12 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_username'=>'required|string',
+            'user_email'=>'required|string',
             'user_name'=> 'required|string',
             'password' => 'required|string'
         ]);
         $user = new User([
-            'user_username' => $request->get('user_username'),
+            'user_email' => $request->get('user_email'),
             'user_name'=> $request->get('user_name'),
             'password'=> $request->get('password')
         ]);
@@ -89,15 +89,16 @@ class UsersController extends Controller
     {
         $request->validate([
             'user_name'=>'required|string',
-            'user_username'=> 'required|string'
+            'user_email'=> 'required|string'
         ]);
 
         $user = User::find($id);
         $user->user_name = $request->get('user_name');
-        $user->user_username = $request->get('user_username');
+        $user->user_email = $request->get('user_email');
+        $user->is_enabled = $request->get('is_enabled');
         $user->save();
 
-        return redirect('/users')->with('success', $request->get('user_username').' has been updated');
+        return redirect('/users')->with('success', $request->get('user_email').' has been updated');
     }
 
     /**

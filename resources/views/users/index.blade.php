@@ -40,7 +40,7 @@
               <td>{{$user->created_at}}</td>
               <td>{{$user->updated_at}}</td>
               <td class="form-inline">
-                  <a href="{{ route('users.edit',$user->user_email)}}" class="btn btn-primary mr-1"><i class="far fa-edit"></i></a>
+                  <a href="{{ route('users.edit', $user->user_email)}}" class="btn btn-primary mr-1"><i class="far fa-edit"></i></a>
                   <form action="{{ route('users.destroy', $user->user_email)}}" method="post">
                     @csrf
                     @method('DELETE')
