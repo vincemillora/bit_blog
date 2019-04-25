@@ -45,13 +45,21 @@ class UsersController extends Controller
             'user_name'=> 'required|string',
             'password' => 'required|string'
         ]);
+        $enabled = 1;
+        $account_url = preg_replace('/\s/', '', $request->get('user_name'));
+        $account_img = "undefined";
+        $header_img = "undefined";
         $user = new User([
             'user_email' => $request->get('user_email'),
             'user_name'=> $request->get('user_name'),
-            'password'=> $request->get('password')
+            'password'=> $request->get('password'),
+            'account_url'=> $account_url,
+            'account_img'=> $account_img,
+            'header_img'=> $header_img,
+            'is_enabled'=> $enabled,
         ]);
         $user->save();
-        return redirect('/users')->with('success', 'New user has been added');
+        return redirect('/users')->with('success', 'Stock has been added');
     }
 
     /**

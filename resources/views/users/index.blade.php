@@ -9,11 +9,17 @@
       </div><br />
     @endif
 
-    <form class="form-inline my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-success my-2 my-sm-0 mr-1" type="submit"><i class="fas fa-search"></i></button>
-      
+    <form class="form-inline justify-content-end my-lg-0" method="post" action="{{ route('admins.index') }}">
+      @csrf
+      <label class="mr-2 font-italic" for="user_email">Email:</label>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_email" id="user_email">
+      <label class="mr-2 ml-3 font-italic" for="user_name">Name:</label>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_name" id="user_name">
+      <label class="mr-2 ml-3 font-italic" for="account_url">Account Url:</label>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="account_url" id="account_url">
+      <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
     </form>
+
     <table class="table mt-3">
       <thead class="bg-light">
           <tr>
