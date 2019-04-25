@@ -20,6 +20,18 @@ class Admin extends Model
       ];
     
     /**
+     * Searchable rules.
+     *
+     * @var array
+     */
+    protected $searchable = [
+      'columns' => [
+          'admin_name',
+          'admin_username'
+      ]
+    ];
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Admin;
 
@@ -10,11 +11,15 @@ class AdminsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $admins = Admin::all();
+        $admins = DB::table('Admin')
+            ->where('admin_username', 'LIKE', '%' . $request->get('admin_username') . '%')
+            ->orWhere('admin_name', 'LIKE', '%' . $request->get('admin_name') . '%')
+            ->get(); 
 
         return view('admins.index', compact('admins'));
     }
@@ -48,7 +53,7 @@ class AdminsController extends Controller
             'password'=> $request->get('password')
         ]);
         $admin->save();
-        return redirect('/admins')->with('success', 'Stock has been added');
+        return redirect('/admins')->with('success', 'New admin has been added');
     }
 
     /**
@@ -94,7 +99,7 @@ class AdminsController extends Controller
         $admin->admin_username = $request->get('admin_username');
         $admin->save();
 
-        return redirect('/admins')->with('success', 'Stock has been updated');
+        return redirect('/admins')->with('success', $request->get('admin_username').' has been updated');
     }
 
     /**
@@ -108,6 +113,6 @@ class AdminsController extends Controller
         $admin = Admin::find($id);
         $admin->delete();
 
-        return redirect('/admins')->with('success', 'Stock has been deleted Successfully');
+        return redirect('/admins')->with('success', $id.' has been deleted');
     }
 }

@@ -1,15 +1,7 @@
 @extends('layout')
-
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
-<div class="card uper">
-  <div class="card-header h3">
-    Create New Admin
-  </div>
+<div class="card mt-5">
+  <div class="card-header h3 bg-dark text-light font-weight-bold"><i class="fas fa-plus"></i> Create New Admin </div>
   <div class="card-body">
     @if ($errors->any())
       <div class="alert alert-danger">
