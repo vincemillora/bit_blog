@@ -23,6 +23,24 @@
           <label for="price">Admin Username:</label>
           <input type="text" class="form-control" name="admin_username" value={{ $admin->admin_username }} />
         </div>
+        
+        @if($admin->is_enabled == 1)
+        <div class="form-group">
+          <label class="mr-2 font-italic" for="is_enabled">Is Enabled:</label>
+          <select class="form-control mr-sm-2" id="is_enabled" name="is_enabled" id="is_enabled">
+            <option value="1" selected="selected" >Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        @else
+        <div class="form-group">
+          <label class="mr-2 font-italic" for="is_enabled">Is Enabled:</label>
+          <select class="form-control mr-sm-2" id="is_enabled" name="is_enabled" id="is_enabled">
+            <option value="1">Yes</option>
+            <option value="0" selected="selected" >No</option>
+          </select>
+        </div>
+        @endif
         <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ route('admins.index') }}" class="btn btn-danger">Cancel</a>
       </form>

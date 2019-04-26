@@ -19,6 +19,7 @@ class AdminsController extends Controller
         $admins = DB::table('Admin')
             ->where('admin_username', 'LIKE', '%' . $request->get('admin_username') . '%')
             ->orWhere('admin_name', 'LIKE', '%' . $request->get('admin_name') . '%')
+            ->orWhere('is_enabled', 'LIKE', '%' . $request->get('is_enabled') . '%')
             ->get(); 
 
         return view('admins.index', compact('admins'));
@@ -91,12 +92,14 @@ class AdminsController extends Controller
     {
         $request->validate([
             'admin_name'=>'required|string',
-            'admin_username'=> 'required|string'
+            'admin_username'=> 'required|string',
+            'is_enabled'=> 'required|string'
         ]);
 
         $admin = Admin::find($id);
         $admin->admin_name = $request->get('admin_name');
         $admin->admin_username = $request->get('admin_username');
+        $admin->is_enabled = $request->get('is_enabled');
         $admin->save();
 
         return redirect('/admins')->with('success', $request->get('admin_username').' has been updated');
