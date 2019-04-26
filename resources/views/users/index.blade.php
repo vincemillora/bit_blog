@@ -9,15 +9,24 @@
       </div><br />
     @endif
 
-    <form class="form-inline justify-content-end my-lg-0" method="post" action="{{ route('admins.index') }}">
+    <form class="my-lg-0" method="post" action="{{ route('admins.index') }}">
       @csrf
-      <label class="mr-2 font-italic" for="user_email">Email:</label>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_email" id="user_email">
-      <label class="mr-2 ml-3 font-italic" for="user_name">Name:</label>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_name" id="user_name">
-      <label class="mr-2 ml-3 font-italic" for="account_url">Account Url:</label>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="account_url" id="account_url">
-      <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+      <div class="form-group form-inline justify-content-end">
+        <label class="mr-2 font-italic" for="user_email">Email:</label>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_email" id="user_email">
+        <label class="mr-2 ml-3 font-italic" for="user_name">Name:</label>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_name" id="user_name">
+        <label class="mr-2 ml-3 font-italic" for="account_url">Account Url:</label>
+        <input class="form-control" type="search" placeholder="Search Here" name="account_url" id="account_url">
+      </div>
+      <div class="form-group form-inline justify-content-end">
+        <label class="mr-2 font-italic" for="is_enabled">Is Enabled:</label>
+        <select class="form-control mr-sm-2" id="is_enabled" name="is_enabled" id="is_enabled">
+          <option value="1" selected="selected" >Yes</option>
+          <option value="0">No</option>
+        </select>
+        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+      </div>
     </form>
 
     <table class="table mt-3">
