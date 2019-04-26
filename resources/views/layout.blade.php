@@ -24,6 +24,7 @@
             <a class="dropdown-item" href="{{ route('admins.index') }}"> <i class="fas fa-user-cog "></i> Manage Admins</a>
             <a class="dropdown-item" href="{{ route('users.index') }}"><i class="fas fa-users"></i> Manage Users</a>
             <a class="dropdown-item" href="{{ route('blog_posts.index') }}"><i class="fas fa-comment"></i></i> Manage Blog Posts</a>
+            <a class="dropdown-item" href="{{ route('comments.index') }}"><i class="fas fa-comments"></i></i> Manage Comments</a>
           </div>
         </li>
         <li class="nav-item active">
