@@ -17,6 +17,8 @@ class CommentsController extends Controller
     public function index(Request $request)
     {
         $comments = DB::table('Comment')
+            ->where('post_id', 'LIKE', '%' . $request->get('post_id') . '%')
+            ->orWhere('user_email', 'LIKE', '%' . $request->get('user_email') . '%')
             ->get(); 
 
         return view('comments.index', compact('comments'));

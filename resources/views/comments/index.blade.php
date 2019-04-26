@@ -11,12 +11,12 @@
 
     <form class="form-inline justify-content-end my-lg-0" method="post" action="{{ route('admins.index') }}">
       @csrf
-      <label class="mr-2 font-italic" for="post_title">Post Title:</label>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="post_title" id="post_title">
-      <label class="mr-2 ml-3 font-italic" for="post_message">Post Message:</label>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="post_message" id="post_message">
-      <label class="mr-2 ml-3 font-italic" for="user_email">Post Creator:</label>
+      <label class="mr-2 font-italic" for="post_id">Post ID:</label>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="post_id" id="post_id">
+      <label class="mr-2 ml-3 font-italic" for="user_email">Comment Creator:</label>
       <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="user_email" id="user_email">
+      <label class="mr-2 ml-3 font-italic" for="comment_message">Comment Message:</label>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" name="comment_message" id="comment_message">
       <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
     </form>
 
