@@ -23,6 +23,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('admins.index') }}"> <i class="fas fa-user-cog "></i> Manage Admins</a>
             <a class="dropdown-item" href="{{ route('users.index') }}"><i class="fas fa-users"></i> Manage Users</a>
+            <a class="dropdown-item" href="{{ route('blog_posts.index') }}"><i class="fas fa-comment"></i></i> Manage Blog Posts</a>
           </div>
         </li>
         <li class="nav-item active">
@@ -31,7 +32,6 @@
       </ul>
     </nav>
     <div class="container">
-      
       @yield('content')
     </div>
   </body>
