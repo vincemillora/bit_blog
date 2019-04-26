@@ -24,6 +24,7 @@
             <td class="h5 font-weight-bold">#</td>
             <td class="h5 font-weight-bold">Admin Name</td>
             <td class="h5 font-weight-bold">Admin Username</td>
+            <td class="h5 font-weight-bold">Is Enabled</td>
             <td class="h5 font-weight-bold">Date Created</td>
             <td class="h5 font-weight-bold">Date Updated</td>
             <td><a href="{{ route('admins.create') }}" class="btn btn-success"><i class="fas fa-plus"></i></a></td>
@@ -35,6 +36,7 @@
               <td>{{$admin->admin_id}}</td>
               <td>{{$admin->admin_name}}</td>
               <td>{{$admin->admin_username}}</td>
+              <td>{{$admin->is_enabled}}</td>
               <td>{{$admin->created_at}}</td>
               <td>{{$admin->updated_at}}</td>
               <td class="form-inline">

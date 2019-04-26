@@ -27,7 +27,8 @@ class Admin extends Model
     protected $searchable = [
       'columns' => [
           'admin_name',
-          'admin_username'
+          'admin_username',
+          'is_enabled'
       ]
     ];
 
