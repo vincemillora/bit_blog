@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::GET('admins/search', 'AdminsController@search')->name('admins.search');
+
+Route::resource('users', 'UsersController');
+Route::resource('blog_posts', 'BlogPostsController');
+Route::resource('likes', 'LikesController');
+Route::resource('comments', 'CommentsController');
+Route::resource('admins', 'AdminsController');
+
