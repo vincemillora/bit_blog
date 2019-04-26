@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="card mt-5">
-  <div class="card-header bg-dark text-light h2 font-weight-bold"><i class="fas fa-comment "></i> Manage Blog Posts </div>
+  <div class="card-header bg-dark text-light h2 font-weight-bold"><i class="fas fa-comment"></i> Manage Blog Posts </div>
   <div class="card-body">
     @if(session()->get('success'))
       <div class="alert alert-success">
